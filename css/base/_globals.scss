@@ -1,0 +1,30 @@
+/* Float Clears: nicolasgallagher.com/micro-clearfix-hack */
+.group:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+  clear: both;
+}
+
+/* Clearfix */
+.group {
+  *zoom: 1;
+}
+
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+/* Responsive Images */
+img { 
+  max-width: 100%;
+}
+
+
+/* Placeholder Input Transition: CSS Tricks */
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.15s 0.15s ease; 
+  opacity: 0;
+}

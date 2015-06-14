@@ -1,0 +1,82 @@
+/* ******************************************
+	Typography
+****************************************** */ 
+html {
+  font-size: 100%;
+  line-height: 1;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: $font-stack-main;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  color: $secondary-color;
+  @include bp(sm) {
+    font-size: 3em;
+  }
+  @include bp(md) {
+    font-size: 3.75em;
+  }
+  @include bp(lg) {
+    font-size: 4.75em;
+  }
+}
+
+h3 {
+  font-family: $font-stack-main;
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 1.25;
+  font-style: italic;
+}
+
+p, 
+li {
+  font-family: $font-stack-main;
+  color: #555;
+  font-size: 1.1em;
+  font-style: normal;
+}
+p {
+  line-height: 1.75;
+}
+li {
+  line-height: 1;
+}
+
+span {
+  border-bottom: 1px solid #777;
+  padding-bottom: .03em;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+
+input {
+  color: #999;
+  font-size: 1em;
+}
+
+.error {
+  font-size: .7em;
+  text-transform: none;
+  line-height: normal;
+}
+
+
+
+/* Selection Styles */
+::-moz-selection {
+  background: $secondary-color;
+  color: #fff;
+}
+::selection {
+  background: $secondary-color;
+  color: #fff;
+}
+

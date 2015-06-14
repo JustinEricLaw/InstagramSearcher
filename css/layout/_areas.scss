@@ -1,0 +1,80 @@
+/* ******************************************
+Layout
+****************************************** */
+
+html {
+  border: 2px solid $secondary-color;
+  @include bp(md) {
+    border: 3px solid $secondary-color;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $primary-dark;
+  padding: .75em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 50em;
+}
+
+header {
+  padding: 1.25em;
+  text-align: center;
+  h1 {
+    padding: .5em 0;
+    text-align: center;
+  }
+}
+
+.input-container {
+  margin: 0 auto 1em;
+  padding: .5em 0 1.5em;
+  width: 100%;
+  max-width: 33em;
+}
+
+input {
+  height: 2.75em;
+  padding: .5em;
+  margin: 0;
+  border: none;
+}
+.input-field {
+  border: none;
+  margin: 0;
+  outline: 0;
+  width: 65%;
+}
+.submit-button {
+  text-transform: uppercase;
+  margin: 0;
+  background-color: $secondary-color;
+  color: $primary-dark;
+  padding: 0 .75em;
+  width: 35%;
+}
+.input-container input {
+  transition: all .25s ease;
+}
+.input-container input[type="submit"]:hover {
+  background-color: white;
+  color: $secondary-color;
+}
+
+
+
+.error {
+  border-bottom: none;
+  background-color: rgba(255, 192, 203, 0.5);
+  color: $primary-color;
+  padding: .15em .35em;
+}
+
+
+

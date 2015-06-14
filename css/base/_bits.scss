@@ -1,0 +1,44 @@
+/**************************************************
+VARIABLES: Colors
+**************************************************/
+$primary-color: #607D8B; // Google Blue Grey
+$primary-dark: #455A64; // Google Blue Grey Dark
+$primary-light: #CFD8DC; // Google Blue Grey Light
+$secondary-color: #FFC107; //Google Amber
+$primary-text: #212121; // Google Black
+
+
+/**************************************************
+VARIABLES: Fonts
+**************************************************/
+$font-stack-display: 'Montserrat', sans-serif;
+$font-stack-main: 'Montserrat', sans-serif;
+
+
+/**************************************************
+VARIABLES: Breakpoints
+**************************************************/
+$break-sm: 23.125em; // 370px
+$break-md: 32.5em; // 520px
+$break-lg: 40.625em; // 650px
+$break-xlg: 112.5em; // 1800px
+
+
+/**************************************************
+MIXINS: Breakpoints
+**************************************************/
+@mixin bp($point) {
+  @if $point == sm {
+    @media screen and (min-width: $break-sm) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: $break-md) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: $break-lg) { @content; }
+  }
+  @if $point == xlg {
+    @media screen and (min-width: $break-xlg) { @content; }
+  }
+}
+
