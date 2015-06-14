@@ -58,16 +58,32 @@ span {
 }
 
 input {
-  color: #999;
   font-size: 1em;
 }
 
+
+/* Style Error Message for Forms */
 .error {
-  font-size: .7em;
+  font-size: .75em;
+  font-weight: 400;
   text-transform: none;
   line-height: normal;
 }
 
+
+/* Style Placeholder Text */
+::-webkit-input-placeholder {
+   color: $primary-dark;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: $primary-dark;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $primary-dark;  
+}
+:-ms-input-placeholder {  
+   color: $primary-dark;  
+}
 
 
 /* Selection Styles */

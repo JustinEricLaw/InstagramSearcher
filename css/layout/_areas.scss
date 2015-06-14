@@ -50,6 +50,7 @@ input {
   margin: 0;
   outline: 0;
   width: 65%;
+  color: $primary-dark;
 }
 .submit-button {
   text-transform: uppercase;
@@ -71,9 +72,9 @@ input {
 
 .error {
   border-bottom: none;
-  background-color: rgba(255, 192, 203, 0.5);
-  color: $primary-color;
-  padding: .15em .35em;
+  color: #FFECB3;
+  padding: .75em;
+  float: left;
 }
 
 

@@ -463,13 +463,29 @@ span {
   text-transform: uppercase; }
 
 input {
-  color: #999;
   font-size: 1em; }
 
+/* Style Error Message for Forms */
 .error {
-  font-size: .7em;
+  font-size: .75em;
+  font-weight: 400;
   text-transform: none;
   line-height: normal; }
+
+/* Style Placeholder Text */
+::-webkit-input-placeholder {
+  color: #455A64; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #455A64; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #455A64; }
+
+:-ms-input-placeholder {
+  color: #455A64; }
 
 /* Selection Styles */
 ::-moz-selection {
@@ -548,7 +564,8 @@ input {
   border: none;
   margin: 0;
   outline: 0;
-  width: 65%; }
+  width: 65%;
+  color: #455A64; }
 
 .submit-button {
   text-transform: uppercase;
@@ -567,6 +584,6 @@ input {
 
 .error {
   border-bottom: none;
-  background-color: rgba(255, 192, 203, 0.5);
-  color: #607D8B;
-  padding: .15em .35em; }
+  color: #FFECB3;
+  padding: .75em;
+  float: left; }
