@@ -2,7 +2,7 @@
 Layout
 ****************************************** */
 
-html {
+body {
   border: 2px solid $secondary-color;
   @include bp(md) {
     border: 3px solid $secondary-color;
@@ -27,7 +27,7 @@ header {
   padding: 1.25em;
   text-align: center;
   h1 {
-    padding: .5em 0;
+    padding: .5em 0 .35em;
     text-align: center;
   }
 }
@@ -63,13 +63,25 @@ input {
 .input-container input {
   transition: all .25s ease;
 }
-.input-container input[type="submit"]:hover {
+.input-container input[type="submit"]:hover,
+.input-container input[type="submit"]:focus {
   background-color: white;
   color: $secondary-color;
+  outline: none;
+}
+
+
+// Image Results
+.img-results {
+  @include bp(lg) {
+    float: left;
+    width: 33.3%;
+  }
 }
 
 
 
+// Error Message
 .error {
   border-bottom: none;
   color: #FFECB3;

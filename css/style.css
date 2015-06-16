@@ -524,10 +524,10 @@ img {
 /* ******************************************
 Layout
 ****************************************** */
-html {
+body {
   border: 2px solid #FFC107; }
   @media screen and (min-width: 32.5em) {
-    html {
+    body {
       border: 3px solid #FFC107; } }
 
 html, body {
@@ -545,7 +545,7 @@ header {
   padding: 1.25em;
   text-align: center; }
   header h1 {
-    padding: .5em 0;
+    padding: .5em 0 .35em;
     text-align: center; }
 
 .input-container {
@@ -578,9 +578,16 @@ input {
 .input-container input {
   transition: all .25s ease; }
 
-.input-container input[type="submit"]:hover {
+.input-container input[type="submit"]:hover,
+.input-container input[type="submit"]:focus {
   background-color: white;
-  color: #FFC107; }
+  color: #FFC107;
+  outline: none; }
+
+@media screen and (min-width: 40.625em) {
+  .img-results {
+    float: left;
+    width: 33.3%; } }
 
 .error {
   border-bottom: none;
