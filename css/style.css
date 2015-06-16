@@ -442,6 +442,15 @@ h3 {
   line-height: 1.25;
   font-style: italic; }
 
+h5, .error {
+  font-size: .85em;
+  line-height: 1.6;
+  color: white;
+  font-weight: 400; }
+  @media screen and (min-width: 32.5em) {
+    h5, .error {
+      font-size: 1em; } }
+
 p,
 li {
   font-family: "Montserrat", sans-serif;
@@ -466,12 +475,6 @@ input {
   font-size: 1em; }
 
 /* Style Error Message for Forms */
-.error {
-  font-size: .75em;
-  font-weight: 400;
-  text-transform: none;
-  line-height: normal; }
-
 /* Style Placeholder Text */
 ::-webkit-input-placeholder {
   color: #455A64; }
@@ -554,12 +557,6 @@ header {
     padding: .5em 0 .35em;
     text-align: center; }
 
-h5 {
-  font-size: .9em;
-  line-height: 1.4;
-  color: white;
-  font-weight: 400; }
-
 .input-container {
   margin: 0 auto;
   padding: .5em 0 .75em;
@@ -620,7 +617,5 @@ input {
       width: 33.3333333%; } }
 
 .error {
-  border-bottom: none;
-  color: #FFECB3;
-  padding: .75em;
-  float: left; }
+  padding: 1.25em 0;
+  text-align: center; }

@@ -22,8 +22,10 @@
         <h1>Instagram<br />Searcher</h1>
         <div class="input-container">
           <form name="myForm" novalidate ng-submit="submit()">
-            <input type="text" class="input-field" name="tag" placeholder="Enter a Tag" ng-model="tag" required><!-- --><input class="submit-button" type="submit" value="search">
-          <span class="error" ng-if="myForm.$submitted && myForm.tag.$error.required">Please Enter a Search Term Above!</span>
+            <input type="text" class="input-field" name="tag" placeholder="{{placeholder}}" ng-model="tag" required><!-- --><input class="submit-button" type="submit" value="search">
+            <div> 
+              <h5 class="error" ng-if="myForm.$submitted && myForm.tag.$error.required">Please Enter a Search Term Above!</h5>
+            </div>
           </form>
         </div>
       </header>

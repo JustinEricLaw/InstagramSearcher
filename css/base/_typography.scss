@@ -34,6 +34,15 @@ h3 {
   line-height: 1.25;
   font-style: italic;
 }
+h5, .error {
+  font-size: .85em;
+  line-height: 1.6;
+  color: white;
+  font-weight: 400;
+  @include bp(md) {
+    font-size: 1em;
+  }
+}
 
 p, 
 li {
@@ -63,12 +72,6 @@ input {
 
 
 /* Style Error Message for Forms */
-.error {
-  font-size: .75em;
-  font-weight: 400;
-  text-transform: none;
-  line-height: normal;
-}
 
 
 /* Style Placeholder Text */
