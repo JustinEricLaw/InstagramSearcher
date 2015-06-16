@@ -9,18 +9,24 @@ body {
   }
 }
 
-html, body {
+html {
   height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 body {
+  min-height: 100%;
   background-color: $primary-dark;
   padding: .75em;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 70em;
 }
 
 header {
@@ -32,9 +38,16 @@ header {
   }
 }
 
+h5 {
+  font-size: .9em;
+  line-height: 1.4;
+  color: white;
+  font-weight: 400;
+}
+
 .input-container {
-  margin: 0 auto 1em;
-  padding: .5em 0 1.5em;
+  margin: 0 auto;
+  padding: .5em 0 .75em;
   width: 100%;
   max-width: 33em;
 }
@@ -64,18 +77,38 @@ input {
   transition: all .25s ease;
 }
 .input-container input[type="submit"]:hover,
-.input-container input[type="submit"]:focus {
+.input-container input[type="submit"]:active {
   background-color: white;
   color: $secondary-color;
+}
+.input-container input[type="submit"]:focus {
   outline: none;
 }
 
 
 // Image Results
+.results-container {
+  padding: .3em;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+
+.results-message {
+  padding-bottom: .5em;
+}
+
 .img-results {
-  @include bp(lg) {
+  padding: .5em;
+  @include bp(md) {
     float: left;
-    width: 33.3%;
+    width: 50%;
+    padding: .6em;
+  }
+  @include bp(xlg) {
+    width: 33.3333333%;
   }
 }
 

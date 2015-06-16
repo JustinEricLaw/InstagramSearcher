@@ -2,24 +2,22 @@ angular.module('myApp', [])
   .controller('myController', ['$scope', '$http', '$q', '$timeout',
   function($scope, $http, $q, $timeout){
 
-  // Set Initial Placeholder Value  
-  $scope.placeholder = 'Enter a Tag';
-
 
   // Create Promise to turn "Searching" Message on/off
   function wait() {
-    var defer = $q.defer;
+    var defer = $q.defer();
     $timeout(function(){
       defer.resolve();
     }, 2000);
     return defer.promise;
   }
 
+  $scope.showMessage = '';
 
   // "Searching Instagram" Text
   function searching() {
-    $scope.showMessage = 'Searching Instagram for Photos Tagged with "' + $scope.tag + '"';
-    wait().then(function(){
+    $scope.showMessage = 'Searching for Photos Tagged with "' + $scope.tag + '"';
+    return wait().then(function(){
       $scope.showMessage = '';
     });
   }
@@ -27,13 +25,11 @@ angular.module('myApp', [])
 
   // On valid form submit:
   $scope.submit = function () {
-    
+    $scope.results = null;
 
     if($scope.myForm.$valid) {
       $scope.submitted = true;
-
-      // Reset Form, Text input Cleared
-      // $scope.myForm.$setPristine();
+      $scope.myForm.$setPristine();
     }
 
     // Query made to Instagram API
@@ -48,12 +44,19 @@ angular.module('myApp', [])
       url: url,
       params: request
     })
-    .success(function(response) {
-      console.log('Success');
-      $scope.results = response.data;
+    .success(function(result) {
+
+      searching().then(function(){
+        console.log('Success');
+        $scope.results = result.data;
+        $scope.showMessage = "We found " + $scope.results.length + " images matching " + $scope.tag;
+      });
     })
-    .error(function() {
-      console.log('Error');
+    .error(function(result) {
+      searching().then(function(){
+        console.log('Error'); 
+        $scope.showMessage = "Error Searching Instagram";       
+      });
     });
 
 
@@ -61,7 +64,6 @@ angular.module('myApp', [])
 
 
 
-  // If Query success, display images
   // Show "Results" text:
   // We found {{results.length}} photos tagged with {{tagname}}
   
