@@ -57,6 +57,7 @@ input {
   outline: 0;
   width: 65%;
   color: $primary-dark;
+  border-radius: 0;
 }
 .submit-button {
   text-transform: uppercase;
@@ -65,10 +66,13 @@ input {
   color: $primary-dark;
   padding: 0 .75em;
   width: 35%;
+  border-radius: 0;
+  float: right; // This fixes alignment issue
 }
 .input-container input {
   transition: all .25s ease;
 }
+
 .input-container input[type="submit"]:hover,
 .input-container input[type="submit"]:active {
   background-color: white;

@@ -49,7 +49,7 @@ angular.module('myApp', [])
         searching().then(function(){
           console.log('Success');
           $scope.results = result.data;
-          $scope.showMessage = 'We found ' + $scope.results.length + ' images matching "' + $scope.tag + '"';
+          $scope.showMessage = 'The ' + $scope.results.length + ' most recent images matching "' + $scope.tag + '"';
           
         });
       })

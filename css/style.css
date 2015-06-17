@@ -574,7 +574,8 @@ input {
   margin: 0;
   outline: 0;
   width: 65%;
-  color: #455A64; }
+  color: #455A64;
+  border-radius: 0; }
 
 .submit-button {
   text-transform: uppercase;
@@ -582,7 +583,9 @@ input {
   background-color: #FFC107;
   color: #455A64;
   padding: 0 .75em;
-  width: 35%; }
+  width: 35%;
+  border-radius: 0;
+  float: right; }
 
 .input-container input {
   transition: all .25s ease; }
