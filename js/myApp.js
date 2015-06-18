@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['angular-velocity'])
   .controller('myController', ['$scope', '$http', '$q', '$timeout',
   function($scope, $http, $q, $timeout){
 

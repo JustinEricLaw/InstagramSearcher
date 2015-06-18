@@ -39,7 +39,7 @@
 
         <!-- Images -->
         <div class="group">
-          <div class="img-results" ng-if="submitted" ng-repeat="result in results">
+          <div class="img-results velocity-transition-flipYIn" data-velocity-opts="{ stagger: 300, duration: 500 }" ng-repeat="result in results">
             <a href="{{result.link}}"><img ng-src="{{result.images.low_resolution.url}}" /></a>
           </div>
         </div>
@@ -52,6 +52,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.3.16/angular-animate.js"></script>
     
+    <!-- Velocity / ng Velocity-->
+    <script src="js/velocity.min.js"></script>
+    <script src="js/velocity.ui.min.js"></script>
+    <script src="js/angular-velocity.min.js"></script>
+
     <!-- Scripts --> 
     <script src="js/myApp.js"></script>
 
