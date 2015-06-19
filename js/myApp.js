@@ -3,6 +3,13 @@ angular.module('myApp', ['angular-velocity'])
   function($scope, $http, $q, $timeout){
 
 
+  // Initialize values
+  $scope.results = [];
+  $scope.showMessage = '';
+  $scope.submitted = false;
+  $scope.placeholder = "Enter a Tag";  
+
+
   // Create Promise to turn "Searching" Message on/off
   function wait() {
     var defer = $q.defer();
@@ -12,9 +19,6 @@ angular.module('myApp', ['angular-velocity'])
     return defer.promise;
   }
 
-  $scope.showMessage = '';
-  $scope.submitted = false;
-  $scope.placeholder = "Enter a Tag";
 
   // "Searching Instagram" Text
   function searching() {
@@ -27,8 +31,10 @@ angular.module('myApp', ['angular-velocity'])
 
   // On valid form submit:
   $scope.submit = function () {
-
-    if($scope.myForm.$valid) {
+    if ($scope.myForm.$invalid) {
+      $scope.results = null;
+      $scope.showMessage = '';
+    } else if ($scope.myForm.$valid) {
       $scope.submitted = true;
       $scope.myForm.$setPristine();
     
@@ -49,8 +55,11 @@ angular.module('myApp', ['angular-velocity'])
         searching().then(function(){
           console.log('Success');
           $scope.results = result.data;
-          $scope.showMessage = 'The ' + $scope.results.length + ' most recent images matching "' + $scope.tag + '"';
-          
+          if ($scope.results.length < 1) {
+            $scope.showMessage = 'No images found';
+          } else {
+            $scope.showMessage = 'The ' + $scope.results.length + ' most recent images matching "' + $scope.tag + '"';
+          }
         });
       })
       .error(function(result) {
@@ -59,9 +68,6 @@ angular.module('myApp', ['angular-velocity'])
           $scope.showMessage = "Error Searching Instagram";       
         });
       });
-    } else if ($scope.myForm.$invalid) {
-      $scope.results = null;
-      $scope.showMessage = '';
     }
 
 
