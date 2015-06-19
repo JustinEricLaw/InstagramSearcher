@@ -8,7 +8,7 @@ angular.module('myApp', ['angular-velocity'])
   $scope.showMessage = '';
   $scope.submitted = false;
   $scope.placeholder = "Enter a Tag";  
-
+  $scope.show = false;
 
   // Create Promise to turn "Searching" Message on/off
   function wait() {
@@ -31,8 +31,10 @@ angular.module('myApp', ['angular-velocity'])
 
   // On valid form submit:
   $scope.submit = function () {
+    $scope.show = false;
+
     if ($scope.myForm.$invalid) {
-      $scope.results = null;
+      $scope.results = [];
       $scope.showMessage = '';
     } else if ($scope.myForm.$valid) {
       $scope.submitted = true;
@@ -58,6 +60,7 @@ angular.module('myApp', ['angular-velocity'])
           if ($scope.results.length < 1) {
             $scope.showMessage = 'No images found';
           } else {
+            $scope.show = true;
             $scope.showMessage = 'The ' + $scope.results.length + ' most recent images matching "' + $scope.tag + '"';
           }
         });

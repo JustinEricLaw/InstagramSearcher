@@ -38,7 +38,7 @@
         </div>
 
         <!-- Images -->
-        <div class="group">
+        <div class="group" ng-show="show">
           <div class="img-results velocity-transition-slideUpBigIn" data-velocity-opts="{ duration: 1000 }" ng-repeat="result in results">
             <a href="{{result.link}}"><img ng-src="{{result.images.low_resolution.url}}" /></a>
           </div>
