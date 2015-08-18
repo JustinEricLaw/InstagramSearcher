@@ -1,3 +1,3 @@
-Angular Instagram Searcher App
-Angular app, searches for 20 most recent Instagram results by tag.
-Demo: http://justinericlaw.github.io/InstagramSearcher/
+<h1>Angular Instagram Searcher App</h1>
+<p>Angular app, searches for 20 most recent Instagram results by tag.<br />
+Demo: http://justinericlaw.github.io/InstagramSearcher/</p>
